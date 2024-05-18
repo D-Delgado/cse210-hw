@@ -1,12 +1,38 @@
-public class Entry
+using System;
 
+namespace Journal_Entries
 {
-    public string _date;
-    public string _promptText;
-    public string _entryText;
-
-    public void Display()
+    class Entry
     {
-        Console.WriteLine($"{_date} {_promptText} {_entryText}");
+        public string _prompt;
+        public string _response;
+        public string _date;
+
+        public Entry(string prompt, string response, string date)
+        {
+            _prompt = prompt;
+            _response = response;
+            _date = date;
+        }
+
+        public string GetPrompt()
+        {
+            return _prompt;
+        }
+
+        public string GetResponse()
+        {
+            return _response;
+        }
+
+        public string GetDate()
+        {
+            return _date;
+        }
+
+        public override string ToString()
+        {
+            return $"Date: {_date} - Prompt: {_prompt} \n{_response}\n";
+        }
     }
 }

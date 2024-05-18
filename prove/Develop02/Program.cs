@@ -1,52 +1,67 @@
 using System;
 
-class Program
+namespace Journal_Entries
 {
-    static void Main(string[] args)
+    class Program
     {
-        DisplayWelcome();
-        DisplayMenu();
-        Console.Write("What would you like to do? ");
-        int choice = Console.ReadLine();
-
-        if (choice == 1)
+        static void Main(string[] args)
         {
-            PromptGenerator prompt = GetRandomPrompt();
-            Console.WriteLine(
+            Journal journal = new Journal();
+
+            List<string> prompts = new List<string>
+            {
+                "What was one thing you are grateful for today",
+                "What was one thing you learned today?",
+                "Who did you interact with today? Elaborate on the interaction.",
+                "Where did you go today and why?",
+                "What was your most exciting thought today?",
+                };
+
+            bool quit = false;
+            while (!quit)
+            {
+                Console.WriteLine("\nWelcome to the Journal Program");
+                Console.WriteLine("Please Select one of the following choices:");
+                Console.WriteLine("1. Write");
+                Console.WriteLine("2. Display");
+                Console.WriteLine("3. Save");
+                Console.WriteLine("4. Load");
+                Console.WriteLine("5. Quit");
+
+                Console.WriteLine("\nWhat would you like to do? ");
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        string prompt = GetRandomPrompt(prompts);
+                        journal.AddEntry(prompt);
+                        break;
+                    case "2":
+                        journal.DisplayEntries();
+                        break;
+                    case "3":
+                        journal.SaveToFile();
+                        break;
+                    case "4":
+                        journal.LoadFromFile();
+                        break;
+                    case "5":
+                        quit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
+                }
+            }
+            Console.WriteLine("Thank you, keep journaling!");
         }
-        else if (choice == 2)
+
+        static string GetRandomPrompt(List<string> prompts)
         {
-            letter = "B";
+            Random random = new Random();
+            int index = random.Next(prompts.Count);
+            return prompts[index];
         }
-        else if (choice == 3)
-        {
-
-        }
-        else if (choice == 4)
-        {
-            
-        }
-        else if (choice == 5)
-        {
-            
-        }
-
-
-
-    }
-
-    static void DisplayWelcome()
-    {
-        Console.WriteLine("Welcome to the journal Program!");
-    }
-
-    static void DisplayMenu()
-    {
-        Console.WriteLine("Please select one of the following choices:");
-        Console.WriteLine("1. Write");
-        Console.WriteLine("2. Display");
-        Console.WriteLine("3. Load");
-        Console.WriteLine("4. Save");
-        Console.WriteLine("5. Quit");
     }
 }

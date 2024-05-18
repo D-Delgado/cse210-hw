@@ -1,26 +1,28 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks.Dataflow;
+using System;
+using System.Collections.Generic;
 
-public class PromptGenerator
+namespace JournalProgram
 {
-    public static string GetRandomPrompt()
+    public class PromptGenerator
     {
-        List<string> _prompts = new List<string>
-        {
-            "What was one thing you are grateful for today",
-            "What was one thing you learned today?",
-            "Who did you interact with today? Elaborate on the interaction.",
-            "Where did you go today and why?",
-            "What was your most exciting thought today?"
-        };
+        private readonly List<string> _prompts;
 
-        Random random = new Random();
-        int index = random.Next(_prompts.Count);
-        string randomPhrase = _prompts[index];
-
-        public void Display()
+        public PromptGenerator()
         {
-        Console.WriteLine(randomPhrase);
+            _prompts = new List<string>
+            {
+                "What was one thing you are grateful for today",
+                "What was one thing you learned today?",
+                "Who did you interact with today? Elaborate on the interaction.",
+                "Where did you go today and why?",
+                "What was your most exciting thought today?"
+            };
+        }
+
+        public string GetRandomPrompt()
+        {
+            var random = new Random();
+            return _prompts[random.Next(_prompts.Count)];
         }
     }
 }
