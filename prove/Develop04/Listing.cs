@@ -25,7 +25,7 @@ public class ListingActivity : Activity
         GetRandomPrompt();
 
         Console.Write("You may begin in: ");
-        ShowTimer(5);
+        ShowTimer(7);
         Console.WriteLine();
 
         while (DateTime.Now < endTime)
@@ -38,7 +38,7 @@ public class ListingActivity : Activity
         Console.WriteLine($"You listed {_count} items!");
         Console.WriteLine();
         DisplayEndMessage();
-        ShowSpinner(5);
+        ShowSpinner(7);
         Console.Clear();
     }
     public string GetRandomPrompt()

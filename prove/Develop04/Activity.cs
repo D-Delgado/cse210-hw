@@ -19,14 +19,14 @@ public class Activity
         _duration = int.Parse(Console.ReadLine());
         Console.Clear();
         Console.WriteLine("Get ready...");
-        ShowSpinner(5);
+        ShowSpinner(7);
             
     }
 
     public void DisplayEndMessage()
     {
         Console.WriteLine("Well done!");
-        ShowSpinner(3);
+        ShowSpinner(5);
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         
@@ -53,7 +53,7 @@ public class Activity
         {
             string s = spinnerStrings[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(400);
             Console.Write("\b \b");
 
             i++;
@@ -69,7 +69,7 @@ public class Activity
         for (int i = seconds; i > 0; i--)
         {
             Console.Write(i);
-            Thread.Sleep(1000);
+            Thread.Sleep(700);
             if (i >= 10)
             {
                 Console.Write("\b\b  \b\b");

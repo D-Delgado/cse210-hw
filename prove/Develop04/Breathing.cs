@@ -17,15 +17,15 @@ public class BreathingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.Write("Breathe in...");
-            ShowTimer(6);
+            ShowTimer(7);
             Console.Write("Now breathe out...");
-            ShowTimer(6);
+            ShowTimer(7);
             Console.WriteLine();
             
         }
 
         DisplayEndMessage();
-        ShowSpinner(5);
+        ShowSpinner(7);
 
     }
 }

@@ -39,7 +39,7 @@ public class ReflectingActivity : Activity
         Console.ReadLine();
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
         Console.Write("You may begin in: ");
-        ShowTimer(5);
+        ShowTimer(7);
 
         Console.Clear();
 
@@ -48,7 +48,7 @@ public class ReflectingActivity : Activity
             if (_questions.Count() != 0)
             {
                 DisplayQuestions();
-                ShowSpinner(5);
+                ShowSpinner(7);
                 Console.WriteLine();
             }
             else
@@ -69,7 +69,7 @@ public class ReflectingActivity : Activity
         }
         Console.WriteLine();
         DisplayEndMessage();
-        ShowSpinner(5);
+        ShowSpinner(7);
         
     }
     public string GetRandomPrompt()
