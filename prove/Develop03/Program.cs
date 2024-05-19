@@ -35,12 +35,6 @@ class Program
                 
                 
             }
-           // else
-           // {
-              //  Console.Write($"{r1.GetDisplayText()} ");
-              //  Console.WriteLine(s1.GetDisplayText());
-                
-          //  }
         }
     }
 }
