@@ -34,7 +34,7 @@ public class Order
     public void DisplayPackingLabel()
     {
         Console.WriteLine("Packing Label");
-        Console.WriteLine("==========================");
+        Console.WriteLine("***********************");
         foreach (Product product in _products)
         {
             Console.WriteLine($"{product.GetId()} - {product.GetName()}");
@@ -44,7 +44,7 @@ public class Order
     public void DisplayShippingLabel()
     {
         Console.WriteLine("Shipping Label");
-        Console.WriteLine("==========================");
+        Console.WriteLine("***********************");
         Console.WriteLine($"{_customer.GetName()}\n{_customer.GetAddress()}");
         Console.WriteLine();
     }
